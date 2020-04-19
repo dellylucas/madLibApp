@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Madlibs</string>
+    <string name="hello">Welcome to Mad Libs! I will ask you tpo fill in words to complete a story. You won\'t be able to see the whole story until you are done filling in all the missing words. That\'s part of the fun. Click below to get started…</string>
+    <string name="words_left"> word(s) left </string>
+    <string name="ok">OK</string>
+    <string name="fill_the_words">Fill in the words to complete the story!</string>
+    <string name="please_type"> please type a/an </string>
+    <string name="your_mad_lib_story">Your Mad Lib Story!</string>
+    <string name="make_another_story">MAKE ANOTHER STORY</string>
+
+    <array name="stories_name">
+        <item>madlib0_simple</item>
+        <item>madlib1_tarzan</item>
+        <item>madlib2_university</item>
+        <item>madlib3_clothes</item>
+        <item>madlib4_dance</item>
+    </array>
+</resources>

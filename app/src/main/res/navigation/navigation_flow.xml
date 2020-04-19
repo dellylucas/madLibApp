@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_flow"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.dfl.madlibs.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_storyFragment"
+            app:destination="@id/storyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/storyFragment"
+        android:name="com.dfl.madlibs.StoryFragment"
+        android:label="fragment_story"
+        tools:layout="@layout/fragment_story">
+        <action
+            android:id="@+id/action_storyFragment_to_wordsFragment"
+            app:destination="@id/wordsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordsFragment"
+        android:name="com.dfl.madlibs.WordsFragment"
+        android:label="fragment_words"
+        tools:layout="@layout/fragment_words">
+        <action
+            android:id="@+id/action_wordsFragment_to_readFragment"
+            app:destination="@id/readFragment" />
+        <argument
+            android:name="storyText"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/readFragment"
+        android:name="com.dfl.madlibs.ReadFragment"
+        android:label="fragment_read"
+        tools:layout="@layout/fragment_read">
+        <action
+            android:id="@+id/action_readFragment_to_storyFragment"
+            app:destination="@id/storyFragment" />
+        <argument
+            android:name="story"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
