@@ -7,6 +7,7 @@
     <string name="please_type"> please type a/an </string>
     <string name="your_mad_lib_story">Your Mad Lib Story!</string>
     <string name="make_another_story">MAKE ANOTHER STORY</string>
+    <string name="select_the_story">Select the story</string>
 
     <array name="stories_name">
         <item>madlib0_simple</item>

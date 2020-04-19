@@ -30,24 +30,32 @@ class WordsFragment : Fragment() {
         fillPropertiesWords()
 
         wordButton.setOnClickListener {
-            wordsUser.add(wordEditText.text.toString())
-            if (wordsNumber >= 1) {
-                fillPropertiesWords()
-                Toast.makeText(requireContext(), "great! keep going!", Toast.LENGTH_SHORT).show()
-            } else {
-                var text = ""
-                var count = words!!.size
-                story?.split("<", ">")?.forEachIndexed { index, s ->
-                    text += if (index % 2 == 0) s
-                    else {
-                        count--
-                        wordsUser[count]
+            val input = wordEditText.text.toString()
+            if (input.isNotEmpty()) {
+                wordsUser.add(input)
+                if (wordsNumber >= 1) {
+                    fillPropertiesWords()
+                    Toast.makeText(requireContext(), "great! keep going!", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    var text = ""
+                    var count = words!!.size
+                    story?.split("<", ">")?.forEachIndexed { index, s ->
+                        text += if (index % 2 == 0) s
+                        else {
+                            count--
+                            wordsUser[count]
+                        }
                     }
-                }
 
-                val action = WordsFragmentDirections.actionWordsFragmentToReadFragment(text ?: "")
-                view.findNavController().navigate(action)
+                    val action =
+                        WordsFragmentDirections.actionWordsFragmentToReadFragment(text ?: "")
+                    view.findNavController().navigate(action)
+                }
+            } else {
+                Toast.makeText(requireContext(), "is empty!", Toast.LENGTH_SHORT).show()
             }
+
         }
     }
 
